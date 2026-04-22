@@ -85,6 +85,7 @@
             </div>
             <div class="relative flex justify-center fade-in-up" style="animation-delay: 0.2s">
                 <div class="w-full max-w-sm aspect-[3/4] bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl relative z-10">
+                    <!-- Link gambar diperbaiki untuk tampilan langsung -->
                     <img src="https://lh3.googleusercontent.com/d/1fSnlWpKFeA2TUAaZU0HIpnbTgEP1atae" alt="Foto Profil Danurwenda" class="w-full h-full object-cover shadow-inner" onerror="this.src='https://ui-avatars.com/api/?name=Danurwenda&background=0D8ABC&color=fff&size=512'">
                 </div>
                 <div class="absolute -bottom-6 -right-6 w-32 h-32 border-8 border-blue-600 rounded-full opacity-10 animate-pulse"></div>
@@ -95,17 +96,17 @@
     <!-- 2. Portofolio -->
     <section id="portfolio" class="py-24 px-6 bg-slate-50">
         <div class="max-w-6xl mx-auto">
-            <div class="mb-12">
+            <div class="mb-12 text-center md:text-left">
                 <h2 class="text-4xl font-bold text-slate-900">Karya Terpilih</h2>
                 <p class="text-slate-500 mt-2">Kumpulan konten kreatif dan strategi visual yang telah saya kerjakan.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-10 items-start">
-                <!-- Portofolio Video (Landscape Frame) -->
-                <div class="group">
-                    <div class="overflow-hidden rounded-2xl mb-6 bg-black shadow-md relative group-hover:shadow-xl transition-all duration-500">
-                        <!-- Rasio Aspect Landscape 16/9 -->
-                        <div class="aspect-video w-full overflow-hidden bg-slate-200">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 items-start justify-center">
+                <!-- Portofolio Video (Rasio Vertikal - Agar Tidak Terpotong) -->
+                <div class="group mx-auto w-full max-w-[340px]">
+                    <div class="overflow-hidden rounded-3xl mb-6 bg-black shadow-lg relative group-hover:shadow-2xl transition-all duration-500 border border-slate-200">
+                        <!-- Rasio 9:16 untuk Instagram Reel -->
+                        <div class="aspect-[9/16] w-full overflow-hidden">
                             <iframe 
                                 src="https://www.instagram.com/reel/DT1gIjrkYWH/embed/" 
                                 class="w-full h-full border-0"
@@ -115,17 +116,26 @@
                             </iframe>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-center md:text-left">Video Content</h3>
-                    <p class="text-slate-500 text-sm mb-4 text-center md:text-left">Contoh strategi storytelling melalui format video landscape untuk jangkauan lebih luas.</p>
+                    <h3 class="text-xl font-bold mb-2">Video Content</h3>
+                    <p class="text-slate-500 text-sm mb-4">Storytelling melalui format vertikal yang dioptimalkan untuk platform media sosial.</p>
                 </div>
 
-                <!-- Portofolio Gambar (Satu lagi disesuaikan jadi Landscape) -->
-                <div class="group">
-                    <div class="overflow-hidden rounded-2xl mb-6 bg-slate-100 aspect-video relative shadow-md group-hover:shadow-xl transition-all duration-500">
+                <!-- Portofolio Gambar 1 -->
+                <div class="group mx-auto w-full max-w-[340px]">
+                    <div class="overflow-hidden rounded-3xl mb-6 bg-slate-100 aspect-[9/16] relative shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-slate-200">
                         <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800" alt="Proyek Gambar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-center md:text-left">Visual Branding</h3>
-                    <p class="text-slate-500 text-sm mb-4 text-center md:text-left">Membangun identitas visual yang konsisten dan menarik di berbagai platform.</p>
+                    <h3 class="text-xl font-bold mb-2">Visual Branding</h3>
+                    <p class="text-slate-500 text-sm mb-4">Membangun identitas visual yang konsisten dan menarik audiens secara instan.</p>
+                </div>
+
+                <!-- Portofolio Gambar 2 (Opsional: Menambah grid agar seimbang) -->
+                <div class="group mx-auto w-full max-w-[340px] hidden lg:block">
+                    <div class="overflow-hidden rounded-3xl mb-6 bg-slate-100 aspect-[9/16] relative shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&q=80&w=800" alt="Content Creation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Digital Strategy</h3>
+                    <p class="text-slate-500 text-sm mb-4">Pendekatan kreatif untuk meningkatkan engagement di berbagai kanal digital.</p>
                 </div>
             </div>
         </div>
