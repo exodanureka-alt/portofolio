@@ -9,165 +9,194 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            opacity: 0;
-            animation: fadeInPage 0.5s ease-in forwards;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
         }
-        @keyframes fadeInPage {
-            to { opacity: 1; }
+        .bento-card {
+            background: #161616;
+            border: 1px solid #262626;
+            border-radius: 2rem;
+            transition: all 0.3s ease;
         }
-        .fade-in-up {
-            animation: fadeInUp 1s ease-out forwards;
+        .bento-card:hover {
+            border-color: #3b82f6;
+            background: #1c1c1c;
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .accent-button {
+            background-color: #e2ff31; /* Kuning neon sesuai referensi */
+            color: #000;
+            transition: transform 0.2s ease;
         }
-        .nav-link {
-            position: relative;
+        .accent-button:hover {
+            transform: scale(1.05);
+            background-color: #f2ff8c;
         }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #3b82f6;
-            transition: width 0.3s ease;
+        .secondary-button {
+            background-color: #262626;
+            border: 1px solid #333;
+            color: #fff;
         }
-        .nav-link:hover::after {
-            width: 100%;
+        .secondary-button:hover {
+            background-color: #333;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
         }
     </style>
 </head>
-<body class="bg-white text-slate-900 selection:bg-blue-100">
+<body class="selection:bg-yellow-400 selection:text-black pb-20">
 
-    <!-- Navigasi -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <span class="text-xl font-bold tracking-tighter italic text-blue-600">D.E.P</span>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#home" class="nav-link">Beranda</a>
-                <a href="#portfolio" class="nav-link">Portofolio</a>
-                <a href="#contact" class="nav-link font-bold text-blue-600 border border-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition-all">Hubungi Saya</a>
+    <!-- Header / Nav -->
+    <header class="max-w-4xl mx-auto mt-8 px-4">
+        <nav class="bento-card px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center text-black font-bold text-xl">
+                    D
+                </div>
+                <span class="font-bold tracking-tight text-sm uppercase hidden sm:inline">Danurwenda Eka</span>
             </div>
-            <div class="md:hidden">
-                <i data-lucide="menu" class="w-6 h-6 text-slate-900"></i>
+            <div class="flex space-x-1 sm:space-x-4 text-xs sm:text-sm font-medium text-slate-400">
+                <a href="#home" class="px-3 py-2 hover:text-white transition-colors">Home</a>
+                <a href="#about" class="px-3 py-2 hover:text-white transition-colors">About</a>
+                <a href="#portfolio" class="px-3 py-2 hover:text-white transition-colors">Projects</a>
+                <a href="#contact" class="px-3 py-2 hover:text-white transition-colors">Contact</a>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- 1. Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="fade-in-up">
-                <span class="inline-block px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-full mb-6 uppercase tracking-widest">Digital Storyteller</span>
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                    Menghidupkan <span class="text-blue-600">Narasi</span> Lewat Konten Kreatif.
+    <main class="max-w-4xl mx-auto px-4 mt-6 space-y-6">
+        
+        <!-- Hero Section -->
+        <section id="home" class="bento-card p-8 md:p-12 relative overflow-hidden">
+            <div class="max-w-2xl relative z-10">
+                <h2 class="text-slate-400 text-xl md:text-2xl font-medium mb-4">Hai, Saya <span class="text-white font-bold">Danurwenda Eka</span></h2>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Menghidupkan <span class="text-yellow-400">Narasi</span> Lewat Konten Kreatif.
                 </h1>
-                <p class="text-lg text-slate-600 mb-8 max-w-md leading-relaxed">
-                    Saya Danurwenda Eka Pangestu, ahli strategi media sosial yang berfokus pada pembangunan audiens dan penciptaan konten yang berdampak.
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                    Ahli strategi media sosial yang berfokus pada pembangunan audiens dan penciptaan konten yang berdampak tinggi di dunia digital.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#portfolio" class="px-8 py-4 bg-slate-900 text-white rounded-full hover:bg-blue-600 transition-all duration-300 shadow-lg">
-                        Lihat Karya
+                    <a href="#portfolio" class="accent-button px-6 py-3 rounded-full font-bold flex items-center space-x-2">
+                        <span>Lihat Projek</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                    <a href="#contact" class="px-8 py-4 border border-slate-200 rounded-full hover:bg-slate-50 transition-all">
-                        Konsultasi Gratis
+                    <a href="#contact" class="secondary-button px-6 py-3 rounded-full font-bold flex items-center space-x-2">
+                        <i data-lucide="mail" class="w-4 h-4 text-slate-400"></i>
+                        <span>Kontak</span>
                     </a>
                 </div>
             </div>
-            <div class="relative flex justify-center fade-in-up" style="animation-delay: 0.2s">
-                <div class="w-full max-w-sm aspect-[3/4] bg-slate-100 rounded-[2rem] overflow-hidden shadow-2xl relative z-10">
-                    <!-- Link gambar diperbaiki untuk tampilan langsung -->
-                    <img src="https://lh3.googleusercontent.com/d/1fSnlWpKFeA2TUAaZU0HIpnbTgEP1atae" alt="Foto Profil Danurwenda" class="w-full h-full object-cover shadow-inner" onerror="this.src='https://ui-avatars.com/api/?name=Danurwenda&background=0D8ABC&color=fff&size=512'">
-                </div>
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 border-8 border-blue-600 rounded-full opacity-10 animate-pulse"></div>
-            </div>
-        </div>
-    </section>
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-400/10 blur-[100px] -mr-32 -mt-32"></div>
+        </section>
 
-    <!-- 2. Portofolio -->
-    <section id="portfolio" class="py-24 px-6 bg-slate-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-12 text-center md:text-left">
-                <h2 class="text-4xl font-bold text-slate-900">Karya Terpilih</h2>
-                <p class="text-slate-500 mt-2">Kumpulan konten kreatif dan strategi visual yang telah saya kerjakan.</p>
+        <!-- About Me Section -->
+        <section id="about" class="bento-card p-8 flex flex-col md:flex-row gap-10 items-center">
+            <div class="w-full md:w-1/3 aspect-square bg-neutral-800 rounded-3xl overflow-hidden shadow-2xl">
+                <img src="https://lh3.googleusercontent.com/d/1fSnlWpKFeA2TUAaZU0HIpnbTgEP1atae" alt="Foto Danurwenda" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" onerror="this.src='https://ui-avatars.com/api/?name=Danurwenda&background=333&color=fff&size=512'">
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 items-start justify-center">
-                <!-- Portofolio Video (Rasio Vertikal - Agar Tidak Terpotong) -->
-                <div class="group mx-auto w-full max-w-[340px]">
-                    <div class="overflow-hidden rounded-3xl mb-6 bg-black shadow-lg relative group-hover:shadow-2xl transition-all duration-500 border border-slate-200">
-                        <!-- Rasio 9:16 untuk Instagram Reel -->
-                        <div class="aspect-[9/16] w-full overflow-hidden">
-                            <iframe 
-                                src="https://www.instagram.com/reel/DT1gIjrkYWH/embed/" 
-                                class="w-full h-full border-0"
-                                scrolling="no" 
-                                allowtransparency="true" 
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                            </iframe>
-                        </div>
+            <div class="w-full md:w-2/3">
+                <h3 class="text-2xl font-bold mb-4">Tentang Saya</h3>
+                <p class="text-slate-400 leading-relaxed mb-4">
+                    Saya selalu terpesona oleh cara teknologi dan kreativitas berpadu untuk menyampaikan sebuah pesan. Bagi saya, media sosial bukan sekadar platform, melainkan kanvas untuk bercerita.
+                </p>
+                <p class="text-slate-400 leading-relaxed">
+                    Saat ini saya fokus mengembangkan konten vertikal yang mampu menangkap perhatian audiens dalam hitungan detik namun meninggalkan kesan yang mendalam.
+                </p>
+                <div class="mt-6 flex space-x-4">
+                    <div class="flex flex-col">
+                        <span class="text-white font-bold text-xl">5+</span>
+                        <span class="text-slate-500 text-xs uppercase tracking-widest">Tahun Pengalaman</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Video Content</h3>
-                    <p class="text-slate-500 text-sm mb-4">Storytelling melalui format vertikal yang dioptimalkan untuk platform media sosial.</p>
-                </div>
-
-                <!-- Portofolio Gambar 1 -->
-                <div class="group mx-auto w-full max-w-[340px]">
-                    <div class="overflow-hidden rounded-3xl mb-6 bg-slate-100 aspect-[9/16] relative shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-slate-200">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800" alt="Proyek Gambar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="w-[1px] h-10 bg-neutral-800"></div>
+                    <div class="flex flex-col">
+                        <span class="text-white font-bold text-xl">100+</span>
+                        <span class="text-slate-500 text-xs uppercase tracking-widest">Konten Dibuat</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Visual Branding</h3>
-                    <p class="text-slate-500 text-sm mb-4">Membangun identitas visual yang konsisten dan menarik audiens secara instan.</p>
-                </div>
-
-                <!-- Portofolio Gambar 2 (Opsional: Menambah grid agar seimbang) -->
-                <div class="group mx-auto w-full max-w-[340px] hidden lg:block">
-                    <div class="overflow-hidden rounded-3xl mb-6 bg-slate-100 aspect-[9/16] relative shadow-lg group-hover:shadow-2xl transition-all duration-500 border border-slate-200">
-                        <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&q=80&w=800" alt="Content Creation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Digital Strategy</h3>
-                    <p class="text-slate-500 text-sm mb-4">Pendekatan kreatif untuk meningkatkan engagement di berbagai kanal digital.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 3. Kontak -->
-    <section id="contact" class="py-24 px-6 bg-slate-900 text-white relative">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="text-4xl md:text-5xl font-bold mb-8">Mari Berkolaborasi!</h2>
-            
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <!-- Link Email -->
-                <a href="mailto:danurwendaeka@gmail.com" class="flex items-center justify-center space-x-3 px-6 py-3 bg-blue-600 rounded-full hover:bg-blue-700 transition-all font-bold min-w-[180px]">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    <span>Kirim Email</span>
-                </a>
-                
-                <!-- Link Instagram -->
-                <a href="https://www.instagram.com/danestuu?igsh=MWQ5djk2eHBiMTI1cg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-3 px-6 py-3 bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-500 rounded-full hover:opacity-90 transition-all font-bold min-w-[180px]">
-                    <i data-lucide="instagram" class="w-5 h-5"></i>
-                    <span>Instagram</span>
-                </a>
+        <!-- Projects / Portfolio Section -->
+        <section id="portfolio" class="space-y-6">
+            <div class="flex items-center justify-between px-4">
+                <h3 class="text-2xl font-bold">Karya Terpilih</h3>
+                <span class="text-slate-500 text-sm">Scroll untuk melihat</span>
+            </div>
 
-                <!-- Link LinkedIn -->
-                <a href="https://www.linkedin.com/in/danurwenda-eka-pangestu-eka-23b719310?" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-3 px-6 py-3 bg-[#0077b5] rounded-full hover:opacity-90 transition-all font-bold min-w-[180px]">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    <span>LinkedIn</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Video Reel Card -->
+                <div class="bento-card overflow-hidden group">
+                    <div class="aspect-[9/16] w-full bg-black relative">
+                        <iframe 
+                            src="https://www.instagram.com/reel/DT1gIjrkYWH/embed/" 
+                            class="w-full h-full border-0"
+                            scrolling="no" 
+                            allowtransparency="true" 
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg mb-1">Social Media Storytelling</h4>
+                        <p class="text-slate-500 text-sm">Optimasi video vertikal untuk engagement maksimal.</p>
+                    </div>
+                </div>
+
+                <!-- Another Project Card (Static Visual) -->
+                <div class="bento-card overflow-hidden group">
+                    <div class="aspect-[9/16] w-full bg-neutral-900 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800" alt="Visual Branding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-100">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-lg mb-1">Visual Branding</h4>
+                        <p class="text-slate-500 text-sm">Konsistensi estetika di berbagai kanal digital.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social / Contact Footer -->
+        <section id="contact" class="bento-card p-8 md:p-12 text-center">
+            <h3 class="text-3xl font-bold mb-4">Siap untuk Berkolaborasi?</h3>
+            <p class="text-slate-400 mb-10 max-w-lg mx-auto">
+                Mari diskusikan bagaimana kita bisa membangun kehadiran digital yang kuat untuk merek Anda.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://www.instagram.com/danestuu?igsh=MWQ5djk2eHBiMTI1cg%3D%3D&utm_source=qr" target="_blank" class="secondary-button p-4 rounded-2xl flex items-center space-x-3 transition-all hover:border-yellow-400">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                    <span class="font-semibold text-sm">Instagram</span>
+                </a>
+                <a href="https://www.linkedin.com/in/danurwenda-eka-pangestu-eka-23b719310?" target="_blank" class="secondary-button p-4 rounded-2xl flex items-center space-x-3 transition-all hover:border-blue-400">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    <span class="font-semibold text-sm">LinkedIn</span>
+                </a>
+                <a href="mailto:danurwendaeka@gmail.com" class="accent-button p-4 rounded-2xl flex items-center space-x-3 transition-all">
+                    <i data-lucide="send" class="w-6 h-6"></i>
+                    <span class="font-semibold text-sm">Email Me</span>
                 </a>
             </div>
-            <p class="text-slate-500 text-sm italic">© 2024 Danurwenda Eka Pangestu. Hak cipta dilindungi undang-undang.</p>
-        </div>
-    </section>
+        </section>
+
+    </main>
+
+    <footer class="mt-12 text-center text-slate-600 text-sm">
+        <p>&copy; 2024 Danurwenda Eka Pangestu. Crafted with Passion.</p>
+    </footer>
 
     <script>
         lucide.createIcons();
