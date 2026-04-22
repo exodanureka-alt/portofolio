@@ -54,7 +54,6 @@
             <span class="text-xl font-bold tracking-tighter italic text-blue-600">D.E.P</span>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#home" class="nav-link">Beranda</a>
-                <a href="#about" class="nav-link">Tentang</a>
                 <a href="#portfolio" class="nav-link">Portofolio</a>
                 <a href="#contact" class="nav-link font-bold text-blue-600 border border-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition-all">Hubungi Saya</a>
             </div>
@@ -96,25 +95,37 @@
     <!-- 2. Portofolio -->
     <section id="portfolio" class="py-24 px-6 bg-slate-50">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-slate-900">Karya Terpilih</h2>
+            <div class="mb-12">
+                <h2 class="text-4xl font-bold text-slate-900">Karya Terpilih</h2>
+                <p class="text-slate-500 mt-2">Kumpulan konten kreatif dan strategi visual yang telah saya kerjakan.</p>
+            </div>
 
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- Portofolio Video (YouTube) -->
+            <div class="grid md:grid-cols-2 gap-10 items-start">
+                <!-- Portofolio Video (Instagram Reel) -->
                 <div class="group">
-                    <div class="overflow-hidden rounded-2xl mb-6 bg-black aspect-video relative shadow-md">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="overflow-hidden rounded-2xl mb-6 bg-black shadow-md relative group-hover:shadow-xl transition-all duration-500">
+                        <!-- Instagram Reel Embed -->
+                        <div class="aspect-[9/16] w-full max-w-[320px] mx-auto overflow-hidden bg-slate-200">
+                            <iframe 
+                                src="https://www.instagram.com/reel/DT1gIjrkYWH/embed/" 
+                                class="w-full h-full border-0"
+                                scrolling="no" 
+                                allowtransparency="true" 
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                            </iframe>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Kampanye Video</h3>
-                    <p class="text-slate-500 text-sm mb-4">Strategi konten video untuk meningkatkan keterlibatan merek secara organik.</p>
+                    <h3 class="text-xl font-bold mb-2">Social Media Reel</h3>
+                    <p class="text-slate-500 text-sm mb-4">Contoh strategi storytelling melalui format video pendek vertikal.</p>
                 </div>
 
                 <!-- Portofolio Gambar -->
                 <div class="group">
-                    <div class="overflow-hidden rounded-2xl mb-6 bg-slate-100 aspect-video relative shadow-md">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800" alt="Proyek Gambar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="overflow-hidden rounded-2xl mb-6 bg-slate-100 aspect-[9/16] max-w-[320px] mx-auto relative shadow-md group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800" alt="Proyek Gambar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Visual Branding</h3>
-                    <p class="text-slate-500 text-sm mb-4">Membangun identitas visual yang konsisten dan menarik di berbagai platform.</p>
+                    <h3 class="text-xl font-bold mb-2 text-center md:text-left">Visual Branding</h3>
+                    <p class="text-slate-500 text-sm mb-4 text-center md:text-left">Membangun identitas visual yang konsisten dan menarik di berbagai platform.</p>
                 </div>
             </div>
         </div>
@@ -132,7 +143,7 @@
                     <span>Kirim Email</span>
                 </a>
                 
-                <!-- Link Instagram (Updated with full URL provided by user) -->
+                <!-- Link Instagram -->
                 <a href="https://www.instagram.com/danestuu?igsh=MWQ5djk2eHBiMTI1cg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center space-x-3 px-6 py-3 bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-500 rounded-full hover:opacity-90 transition-all font-bold min-w-[180px]">
                     <i data-lucide="instagram" class="w-5 h-5"></i>
                     <span>Instagram</span>
