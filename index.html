@@ -257,24 +257,30 @@
                     </div>
                 </div>
 
-                <!-- Company Profile Card -->
-                <div class="glass-card overflow-hidden group border-2 border-transparent hover:border-yellow-400/50">
+                <!-- Company Profile Card (Updated with User Link) -->
+                <a href="https://drive.google.com/file/d/1vo9OxXVQbyoc2RTc5M5YeIqkqMFwuV8M/view?usp=drivesdk" target="_blank" class="glass-card overflow-hidden group border-2 border-transparent hover:border-yellow-400/50 block transition-all">
                     <div class="aspect-[9/16] w-full bg-neutral-900 overflow-hidden relative">
                         <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800" alt="Visual Branding" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-50 group-hover:opacity-100 grayscale hover:grayscale-0">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold flex items-center gap-2">
+                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                                View Profile
+                            </div>
+                        </div>
                     </div>
                     <div class="p-8">
                         <div class="flex justify-between items-start mb-4">
-                            <h4 class="font-black text-2xl">Company Profile Campaign</h4>
-                            <span class="text-yellow-400"><i data-lucide="play" class="w-5 h-5"></i></span>
+                            <h4 class="font-black text-2xl">Company Profile Portfolio</h4>
+                            <span class="text-yellow-400"><i data-lucide="external-link" class="w-5 h-5"></i></span>
                         </div>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Pembuatan aset visual branding yang elegan dan profesional untuk membangun kepercayaan client korporat.</p>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Aset visual branding dan profil perusahaan yang komprehensif, dirancang untuk membangun kredibilitas korporat yang kuat.</p>
                         <div class="flex gap-2">
+                            <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-slate-400 font-bold uppercase">Google Drive</span>
                             <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-slate-400 font-bold uppercase">Branding</span>
                             <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-slate-400 font-bold uppercase">Corporate</span>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
