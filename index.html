@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Lucide Icons (Pemuatan yang lebih stabil) -->
+    <script src="https://unpkg.com/lucide@0.321.0/dist/umd/lucide.min.js"></script>
     <!-- Three.js for 3D Background -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- AOS Animation -->
@@ -59,6 +59,22 @@
             box-shadow: 0 0 25px rgba(226, 255, 49, 0.6);
             transform: translateY(-2px);
         }
+        .social-link-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #94a3b8;
+            transition: all 0.3s ease;
+        }
+        .social-link-nav:hover {
+            background: var(--neon-yellow);
+            color: #000;
+            transform: scale(1.1);
+        }
         .skill-badge {
             background: rgba(255, 255, 255, 0.05);
             padding: 0.5rem 1rem;
@@ -72,7 +88,6 @@
             color: black;
             border-color: var(--neon-yellow);
         }
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
@@ -87,36 +102,41 @@
 </head>
 <body class="selection:bg-yellow-400 selection:text-black">
 
-    <!-- 3D Background Canvas -->
     <canvas id="canvas-3d"></canvas>
 
     <!-- Navigation -->
     <header class="max-w-5xl mx-auto mt-6 px-4 sticky top-6 z-50">
-        <nav class="glass-card px-8 py-4 flex items-center justify-between">
-            <div class="flex items-center space-x-6">
+        <nav class="glass-card px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
                 <div class="flex items-center space-x-3 group cursor-pointer">
                     <div class="w-10 h-10 bg-yellow-400 rounded-xl flex items-center justify-center text-black font-extrabold text-xl transform group-hover:rotate-12 transition-transform">
                         D
                     </div>
-                    <span class="font-bold tracking-tighter text-lg">DANURWENDA.</span>
+                    <span class="font-bold tracking-tighter text-lg hidden sm:block">DANURWENDA.</span>
                 </div>
-                <!-- Social Icons in Nav -->
-                <div class="hidden sm:flex items-center space-x-4 pl-4 border-l border-white/10">
-                    <a href="https://www.instagram.com/danestuu?igsh=MWQ5djk2eHBiMTI1cg%3D%3D&utm_source=qr" target="_blank" class="text-slate-400 hover:text-yellow-400 transition-colors">
-                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                
+                <!-- Social Icons in Navbar (Visible) -->
+                <div class="flex items-center space-x-2 pl-4 border-l border-white/10">
+                    <a href="https://www.instagram.com/danestuu?igsh=MWQ5djk2eHBiMTI1cg%3D%3D&utm_source=qr" target="_blank" class="social-link-nav">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/danurwenda-eka-pangestu-eka-23b719310?" target="_blank" class="text-slate-400 hover:text-yellow-400 transition-colors">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    <a href="https://www.linkedin.com/in/danurwenda-eka-pangestu-eka-23b719310?" target="_blank" class="social-link-nav">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
                     </a>
                 </div>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-400">
+            
+            <div class="hidden md:flex space-x-6 text-xs font-bold uppercase tracking-wider text-slate-400">
                 <a href="#home" class="hover:text-white transition-colors">Home</a>
                 <a href="#skills" class="hover:text-white transition-colors">Skills</a>
                 <a href="#portfolio" class="hover:text-white transition-colors">Projects</a>
                 <a href="#contact" class="hover:text-white transition-colors">Contact</a>
             </div>
-            <a href="https://wa.me/6285792310632" target="_blank" class="neon-btn px-5 py-2 rounded-xl text-sm font-bold">Hire Me</a>
+            
+            <a href="https://wa.me/6285792310632" target="_blank" class="neon-btn px-5 py-2 rounded-xl text-sm font-bold flex items-center gap-2">
+                <i data-lucide="zap" class="w-4 h-4"></i>
+                <span>Hire Me</span>
+            </a>
         </nav>
     </header>
 
@@ -130,31 +150,29 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
                     </span>
-                    <span class="text-xs font-bold text-slate-300 uppercase tracking-widest">Available for New Projects</span>
+                    <span class="text-xs font-bold text-slate-300 uppercase tracking-widest">Digital Storyteller</span>
                 </div>
                 <h1 class="text-5xl md:text-8xl font-extrabold leading-[1.1] mb-8 text-gradient">
-                    Visual Strategy & <br> Digital Stories.
+                    Menghidupkan <br> Narasi Kreatif.
                 </h1>
                 <p class="text-slate-400 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl">
-                    Social Media Specialist & Creative Director yang mentransformasi ide menjadi narasi visual menggunakan CapCut, Adobe Premiere, dan strategi marketing modern.
+                    Saya Danurwenda Eka Pangestu, ahli strategi media sosial yang berfokus pada pembangunan audiens dan penciptaan konten yang berdampak.
                 </p>
-                <div class="flex flex-wrap gap-6">
-                    <a href="https://wa.me/6285792310632" target="_blank" class="neon-btn px-8 py-4 rounded-2xl font-bold flex items-center space-x-3 text-lg">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        <span>Chat WhatsApp</span>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#portfolio" class="neon-btn px-8 py-4 rounded-2xl font-bold flex items-center space-x-3 text-lg">
+                        <span>Lihat Karya</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
-                    <div class="flex -space-x-4">
-                        <div class="w-12 h-12 rounded-full border-2 border-black bg-neutral-800 flex items-center justify-center"><i data-lucide="video" class="w-5 h-5 text-yellow-400"></i></div>
-                        <div class="w-12 h-12 rounded-full border-2 border-black bg-neutral-800 flex items-center justify-center"><i data-lucide="camera" class="w-5 h-5 text-yellow-400"></i></div>
-                        <div class="w-12 h-12 rounded-full border-2 border-black bg-neutral-800 flex items-center justify-center"><i data-lucide="layout" class="w-5 h-5 text-yellow-400"></i></div>
-                    </div>
+                    <a href="https://wa.me/6285792310632" target="_blank" class="glass-card border-white/10 px-8 py-4 rounded-2xl font-bold flex items-center space-x-3 text-lg hover:bg-white/5">
+                        <i data-lucide="message-circle" class="w-5 h-5 text-yellow-400"></i>
+                        <span>Hubungi Saya</span>
+                    </a>
                 </div>
             </div>
-            <!-- Glow Effect -->
-            <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-yellow-400/20 blur-[120px] rounded-full"></div>
+            <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-yellow-400/10 blur-[120px] rounded-full"></div>
         </section>
 
-        <!-- Tools & Expertise Section -->
+        <!-- Tools & Expertise -->
         <section id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
             <div class="glass-card p-10 space-y-6">
                 <h3 class="text-2xl font-bold text-yellow-400 flex items-center gap-3">
@@ -167,9 +185,6 @@
                     <span class="skill-badge">Adobe Illustrator</span>
                     <span class="skill-badge">Figma</span>
                 </div>
-                <p class="text-slate-400 text-sm italic border-l-2 border-yellow-400 pl-4 py-1">
-                    "Menguasai workflow editing cepat dengan hasil kualitas HD dan sinematik."
-                </p>
             </div>
             <div class="glass-card p-10 space-y-6">
                 <h3 class="text-2xl font-bold text-yellow-400 flex items-center gap-3">
@@ -186,15 +201,8 @@
                     <li class="flex items-start gap-3">
                         <i data-lucide="check-circle-2" class="w-5 h-5 text-yellow-400 mt-1"></i>
                         <div>
-                            <p class="font-bold">Company Profile & Campaign</p>
-                            <p class="text-xs text-slate-500">Membuat branding profesional untuk korporasi.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i data-lucide="check-circle-2" class="w-5 h-5 text-yellow-400 mt-1"></i>
-                        <div>
-                            <p class="font-bold">Marketing Strategy</p>
-                            <p class="text-xs text-slate-500">Analisis tren dan eksekusi konten yang menjual.</p>
+                            <p class="font-bold">Campaign Strategy</p>
+                            <p class="text-xs text-slate-500">Eksekusi konten marketing yang konversif.</p>
                         </div>
                     </li>
                 </ul>
@@ -204,194 +212,134 @@
         <!-- Profile Section -->
         <section class="glass-card p-10 flex flex-col md:flex-row gap-12 items-center" data-aos="fade-up">
             <div class="w-full md:w-2/5 relative">
-                <div class="aspect-[4/5] bg-neutral-900 rounded-[3rem] overflow-hidden border-4 border-white/5 shadow-2xl transform rotate-2">
-                    <img src="https://lh3.googleusercontent.com/d/1fSnlWpKFeA2TUAaZU0HIpnbTgEP1atae" alt="Foto Danurwenda" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" onerror="this.src='https://ui-avatars.com/api/?name=Danurwenda&background=333&color=fff&size=512'">
+                <div class="aspect-[4/5] bg-neutral-900 rounded-[3rem] overflow-hidden border-4 border-white/5 shadow-2xl">
+                    <img src="https://lh3.googleusercontent.com/d/1fSnlWpKFeA2TUAaZU0HIpnbTgEP1atae" alt="Foto Danurwenda" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Danurwenda&background=e2ff31&color=000&size=512'">
                 </div>
                 <div class="absolute -bottom-6 -left-6 bg-yellow-400 text-black px-6 py-4 rounded-2xl font-extrabold shadow-xl -rotate-6">
-                    SOCIAL MEDIA <br> SPECIALIST
+                    CREATIVE<br>STRATEGIST
                 </div>
             </div>
-            <div class="w-full md:w-3/5 space-y-6">
+            <div class="w-full md:w-3/5 space-y-6 text-center md:text-left">
                 <h3 class="text-4xl font-extrabold">Tentang Saya</h3>
                 <p class="text-slate-400 text-lg leading-relaxed">
-                    Saya percaya bahwa konten yang bagus adalah perpaduan antara data dan empati. Dengan pengalaman mengolah video di <span class="text-white font-bold">CapCut</span> dan <span class="text-white font-bold">Adobe Premiere</span>, saya tidak hanya sekadar 'mengedit', tapi membangun <span class="text-yellow-400 font-bold">identitas digital</span>.
+                    Saya percaya bahwa konten yang bagus adalah perpaduan antara data dan empati. Dengan pengalaman mengolah video di <span class="text-white font-bold">CapCut</span> dan <span class="text-white font-bold">Adobe Premiere</span>, saya tidak hanya sekadar 'mengedit', tapi membangun identitas digital.
                 </p>
-                <div class="grid grid-cols-2 gap-6 pt-4">
-                    <div class="p-6 bg-white/5 rounded-3xl border border-white/10 text-center">
-                        <span class="block text-3xl font-black text-yellow-400">100+</span>
-                        <span class="text-xs text-slate-500 uppercase tracking-widest">Viral Content</span>
-                    </div>
-                    <div class="p-6 bg-white/5 rounded-3xl border border-white/10 text-center">
-                        <span class="block text-3xl font-black text-yellow-400">50+</span>
-                        <span class="text-xs text-slate-500 uppercase tracking-widest">Happy Clients</span>
-                    </div>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                     <a href="https://www.instagram.com/danestuu?igsh=MWQ5djk2eHBiMTI1cg%3D%3D&utm_source=qr" target="_blank" class="w-12 h-12 glass-card flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/danurwenda-eka-pangestu-eka-23b719310?" target="_blank" class="w-12 h-12 glass-card flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Work / Projects Section -->
+        <!-- Portfolio Section -->
         <section id="portfolio" class="space-y-8" data-aos="fade-up">
-            <div class="flex flex-col md:flex-row items-end justify-between gap-4 px-4">
-                <div>
-                    <h3 class="text-4xl font-extrabold">Karya Terpilih</h3>
-                    <p class="text-slate-500 mt-2 italic text-lg">"Where quality meets creativity."</p>
-                </div>
-                <div class="flex space-x-2">
-                    <span class="px-4 py-2 bg-yellow-400/10 text-yellow-400 rounded-full text-sm font-bold border border-yellow-400/20">Semua</span>
-                    <span class="px-4 py-2 bg-white/5 text-slate-500 rounded-full text-sm font-bold">Video</span>
-                    <span class="px-4 py-2 bg-white/5 text-slate-500 rounded-full text-sm font-bold">Branding</span>
-                </div>
-            </div>
-
+            <h3 class="text-4xl font-extrabold px-4">Karya Terpilih</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Video Reel Card (Instagram) -->
-                <div class="glass-card overflow-hidden group border-2 border-transparent hover:border-yellow-400/50 flex flex-col">
-                    <div class="w-full bg-neutral-900" style="min-height: 500px;">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DT1gIjrkYWH/" data-instgrm-version="14" style=" background:#000; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:100%; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
-                        <script async src="//www.instagram.com/embed.js"></script>
+                <!-- Project 1 -->
+                <div class="glass-card overflow-hidden group">
+                    <div class="aspect-video w-full bg-neutral-900 flex items-center justify-center">
+                         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DT1gIjrkYWH/" data-instgrm-version="14" style=" background:#000; border:0; margin: 1px; max-width:100%; min-width:326px; padding:0; width:99.375%;"></blockquote>
+                         <script async src="//www.instagram.com/embed.js"></script>
                     </div>
                     <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h4 class="font-black text-2xl">Social Media Specialist Project</h4>
-                            <a href="https://www.instagram.com/reel/DT1gIjrkYWH/" target="_blank" class="text-yellow-400 hover:scale-110 transition-transform"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                        </div>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Penerapan strategi narasi vertikal untuk meningkatkan retensi penonton hingga 80% menggunakan teknik transisi CapCut.</p>
-                        <div class="flex gap-2">
-                            <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-slate-400 font-bold uppercase">Viral Strategy</span>
-                            <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-slate-400 font-bold uppercase">Vertical Video</span>
-                        </div>
+                        <h4 class="font-black text-2xl mb-2">Video Content Reel</h4>
+                        <p class="text-slate-500 text-sm">Strategi narasi visual untuk engagement tinggi di Instagram Reels.</p>
                     </div>
                 </div>
-
-                <!-- Company Profile Card (Google Drive Embed) -->
-                <div class="glass-card overflow-hidden group border-2 border-transparent hover:border-yellow-400/50 flex flex-col">
-                    <div class="aspect-[9/16] w-full bg-neutral-900 overflow-hidden relative">
-                        <!-- Google Drive Video Embed -->
-                        <iframe 
-                            src="https://drive.google.com/file/d/1vo9OxXVQbyoc2RTc5M5YeIqkqMFwuV8M/preview" 
-                            class="w-full h-full border-0" 
-                            allow="autoplay"
-                            loading="lazy">
-                        </iframe>
+                <!-- Project 2 -->
+                <div class="glass-card overflow-hidden group">
+                    <div class="aspect-video w-full bg-neutral-900 relative">
+                        <iframe src="https://drive.google.com/file/d/1vo9OxXVQbyoc2RTc5M5YeIqkqMFwuV8M/preview" class="w-full h-full border-0" allow="autoplay"></iframe>
                     </div>
                     <div class="p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h4 class="font-black text-2xl">Company Profile Portfolio</h4>
-                            <a href="https://drive.google.com/file/d/1vo9OxXVQbyoc2RTc5M5YeIqkqMFwuV8M/view" target="_blank" class="text-yellow-400 hover:scale-110 transition-transform">
-                                <i data-lucide="external-link" class="w-6 h-6"></i>
-                            </a>
-                        </div>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Aset visual branding dan profil perusahaan yang komprehensif. Video di atas diputar langsung dari Cloud Storage.</p>
-                        <div class="flex gap-2">
-                            <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-slate-400 font-bold uppercase">Live Stream</span>
-                            <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-slate-400 font-bold uppercase">Branding</span>
-                            <span class="text-[10px] bg-white/5 px-2 py-1 rounded text-slate-400 font-bold uppercase">Corporate</span>
-                        </div>
+                        <h4 class="font-black text-2xl mb-2">Corporate Profile Video</h4>
+                        <p class="text-slate-500 text-sm">Produksi video profil perusahaan dengan standar profesional.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA / Contact -->
-        <section id="contact" class="glass-card p-12 md:p-24 text-center relative overflow-hidden" data-aos="zoom-in">
+        <!-- Contact Section -->
+        <section id="contact" class="glass-card p-12 md:p-20 text-center relative overflow-hidden" data-aos="zoom-in">
             <div class="relative z-10">
-                <h3 class="text-5xl md:text-7xl font-black mb-8 italic">READY TO GO <br> <span class="text-yellow-400">NEXT LEVEL?</span></h3>
-                <p class="text-slate-400 mb-12 max-w-xl mx-auto text-lg font-medium">
-                    Hubungi saya untuk diskusi strategi konten, jasa editing video HD, atau konsultasi brand marketing.
-                </p>
+                <h3 class="text-5xl md:text-6xl font-black mb-8 italic">MARI MULAI <br> <span class="text-yellow-400">PROYEK ANDA.</span></h3>
                 <div class="flex flex-wrap justify-center gap-6">
-                    <!-- WhatsApp Primary CTA -->
-                    <a href="https://wa.me/6285792310632" target="_blank" class="neon-btn px-10 py-5 rounded-2xl flex items-center space-x-3 text-lg font-black group transition-all">
+                    <a href="https://wa.me/6285792310632" target="_blank" class="neon-btn px-10 py-5 rounded-2xl flex items-center space-x-3 text-lg font-black transition-all">
                         <i data-lucide="message-circle" class="w-6 h-6"></i>
-                        <span>Chat WhatsApp</span>
+                        <span>WhatsApp Saya</span>
                     </a>
                     
                     <div class="flex gap-4">
-                        <a href="https://www.instagram.com/danestuu?igsh=MWQ5djk2eHBiMTI1cg%3D%3D&utm_source=qr" target="_blank" class="w-16 h-16 glass-card flex items-center justify-center hover:bg-white hover:text-black transition-all" title="Instagram">
-                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        <a href="https://www.instagram.com/danestuu?igsh=MWQ5djk2eHBiMTI1cg%3D%3D&utm_source=qr" target="_blank" class="w-16 h-16 glass-card flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all group">
+                            <i data-lucide="instagram" class="w-7 h-7"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/danurwenda-eka-pangestu-eka-23b719310?" target="_blank" class="w-16 h-16 glass-card flex items-center justify-center hover:bg-white hover:text-black transition-all" title="LinkedIn">
-                            <i data-lucide="linkedin" class="w-6 h-6"></i>
+                        <a href="https://www.linkedin.com/in/danurwenda-eka-pangestu-eka-23b719310?" target="_blank" class="w-16 h-16 glass-card flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all group">
+                            <i data-lucide="linkedin" class="w-7 h-7"></i>
                         </a>
-                        <a href="mailto:danurwendaeka@gmail.com" class="w-16 h-16 glass-card flex items-center justify-center hover:bg-white hover:text-black transition-all" title="Email">
-                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        <a href="mailto:danurwendaeka@gmail.com" class="w-16 h-16 glass-card flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all group">
+                            <i data-lucide="mail" class="w-7 h-7"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <!-- Background Decoration -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-yellow-400/5 blur-[150px] rounded-full"></div>
         </section>
 
     </main>
 
-    <footer class="mt-20 mb-10 text-center text-slate-700 text-xs uppercase tracking-[0.5em] font-bold">
-        <p>&copy; 2024 DANURWENDA EKA PANGESTU &bull; ALL RIGHTS RESERVED</p>
+    <footer class="mt-20 mb-10 text-center text-slate-700 text-[10px] uppercase tracking-[0.4em] font-bold">
+        <p>&copy; 2024 DANURWENDA EKA PANGESTU &bull; MALANG, INDONESIA</p>
     </footer>
 
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+        // Start Script after DOM content loaded
+        window.onload = function() {
+            // Initialize AOS
+            AOS.init({ duration: 1000, once: true });
 
-        // Initialize Icons
-        lucide.createIcons();
+            // Initialize Icons (PENTING: Harus dipanggil agar ikon muncul)
+            if (window.lucide) {
+                lucide.createIcons();
+            }
 
-        // Three.js 3D Background - Particles
-        const canvas = document.querySelector('#canvas-3d');
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
+            // Three.js Background
+            const canvas = document.querySelector('#canvas-3d');
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
 
-        // Particles Geometry
-        const particlesCount = 800;
-        const posArray = new Float32Array(particlesCount * 3);
-        for(let i=0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 15;
-        }
+            const particlesCount = 400;
+            const posArray = new Float32Array(particlesCount * 3);
+            for(let i=0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 15;
+            }
 
-        const particlesGeometry = new THREE.BufferGeometry();
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.005,
-            color: '#e2ff31',
-            transparent: true,
-            opacity: 0.4
-        });
+            const particlesGeometry = new THREE.BufferGeometry();
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            const particlesMaterial = new THREE.PointsMaterial({ size: 0.006, color: '#e2ff31', transparent: true, opacity: 0.3 });
+            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particlesMesh);
 
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
+            function animate() {
+                requestAnimationFrame(animate);
+                particlesMesh.rotation.y += 0.0005;
+                renderer.render(scene, camera);
+            }
 
-        // Animation Loop
-        function animate() {
-            requestAnimationFrame(animate);
-            particlesMesh.rotation.y += 0.001;
-            particlesMesh.rotation.x += 0.0005;
-            renderer.render(scene, camera);
-        }
+            function onResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
 
-        // Resize Handling
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-
-        window.addEventListener('resize', onWindowResize);
-        onWindowResize();
-        animate();
-
-        // Mouse Interactivity
-        document.addEventListener('mousemove', (event) => {
-            const mouseX = (event.clientX / window.innerWidth) - 0.5;
-            const mouseY = (event.clientY / window.innerHeight) - 0.5;
-            particlesMesh.rotation.x += mouseY * 0.01;
-            particlesMesh.rotation.y += mouseX * 0.01;
-        });
+            window.addEventListener('resize', onResize);
+            onResize();
+            animate();
+        };
     </script>
 </body>
 </html>
